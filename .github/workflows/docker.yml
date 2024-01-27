@@ -1,0 +1,12 @@
+---
+name: Docker
+on: pull_request
+jobs:
+  mcvs-docker-action:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v4.1.1
+      - uses: schubergphilis/mcaf-mcvs-docker-action@v0.3.2
+        with:
+          dockle-accept-key: /,--build,--enable-option-checking,--strip-components,APT::AutoRemove::RecommendsImportant,dst,EXTRA_CFLAGS,gnuArch,GNUPGHOME,LANG,LDFLAGS,nproc,PATH,perl-base,PROFILE_TASK,PYTHONDONTWRITEBYTECODE,PYTHON_GET_PIP_SHA256,PYTHON_GET_PIP_URL,PYTHON_PIP_VERSION,PYTHON_SETUPTOOLS_VERSION,PYTHON_VERSION,savedAptMark,LC_ALL,PYTHONFAULTHANDLER,curl,RUN,libcrypto3,libssl3,sqlite
+          token: ${{ secrets.GITHUB_TOKEN }}

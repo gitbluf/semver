@@ -1,0 +1,23 @@
+---
+version: 2
+assignees: ["gitbluf"]
+open-pull-requests-limit: 3
+updates:
+  - package-ecosystem: cargo
+    directory: /
+    commit-message:
+      prefix: "[cargo] "
+    schedule:
+      interval: weekly
+  - package-ecosystem: docker
+    directory: /
+    commit-message:
+      prefix: "[docker] "
+    schedule:
+      interval: daily
+  - package-ecosystem: github-actions
+    directory: /
+    commit-message:
+      prefix: "[gh] "
+    schedule:
+      interval: daily
